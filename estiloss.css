@@ -1124,7 +1124,10 @@ text-align: center;
 }
 .ubicacion > h2
 {
-  font-size: 3em;
+  font-family: 'Lilita One', cursiva;
+  font-size: 3.2em;
+  text-align: center;
+  color: rgb(212, 0, 255);
 }
 
 input[type=radio] {
@@ -1212,6 +1215,8 @@ div img{
 
 .mapa{
   padding: 5px;
+  background-image: url(/img/mapa.jpeg);
+  background-size: contain;
 }
 .block .ayudatxt{
   font-family: "Montserrat", Sans-serif;
