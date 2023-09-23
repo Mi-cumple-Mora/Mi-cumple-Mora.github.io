@@ -61,10 +61,11 @@ body {
   }
 
   .enviado >p{
-    margin-top: 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.3em;
+    margin-top: 10px;
+    font-family: 'Lilita One', cursive;
+    font-size: 1.5em;
     background-color: #FF80FF;
+ 
   
   }
 
@@ -581,7 +582,7 @@ ul {
 }
 
 .contact-form.response{
-  margin-top: 90px;
+  margin-top: 30px;
   border-radius: 10px; 
   
 }
@@ -589,6 +590,19 @@ ul {
   margin-top: 90px;
   border-radius: 10px; 
   
+}
+.contact-response p{
+  font-size: 2em;
+  font-family: 'Lilita One', cursive;
+  color: rgb(255, 255, 255);
+  background-color:#ca08ca;
+  margin-left: 25%;
+  margin-right: 25%;
+  border: solid;
+  border-radius: 2px;
+  margin-top: 20px;
+  
+
 }
 .confirmation{
 align-content: center;

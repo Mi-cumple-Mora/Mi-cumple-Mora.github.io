@@ -363,7 +363,8 @@
           <p class="tespero">Te espero!</p>
         </div>
         
-        <form id="myForm" action="https://arandavicky@hotmail.com" method="POST">
+        <!-- <form id="myForm" action="https://arandavicky@hotmail.com" method="POST"> -->
+          <form  class="contact-form"  method="POST">
           <!--era contact-Form-->
           <div class="container_2">
           
@@ -438,7 +439,7 @@
         </div>
     
         <div class="contact-response none enviado">
-          <p>Enviado. Gracias!!</p>
+          <p>Enviado. Gracias!</p>
         </div>
 
 
@@ -458,7 +459,7 @@
     
   </section>
 
-   <script>
+   <!-- <script>
       const form = document.getElementById('myForm');
       const confirmationDiv = document.getElementById('confirmation');
       const loader = document.getElementById('loader');
@@ -487,7 +488,55 @@
 
           }
       });
-  </script> 
+  </script>  -->
+
+  <script>
+
+    const d = document;
+   
+     function contactForm() { 
+      const $form = d.querySelector(".contact-form"),
+         $inputs = d.querySelectorAll(".contact-form[required]");
+   
+       d.addEventListener("submit", (e) => {
+         e.preventDefault();
+   /*      alert("Enviando formulario");*/
+         const $loader = d.querySelector(".contact-form-loader"),
+           $response = d.querySelector(".contact-response");
+           $loader.classList.remove("none");
+   
+         fetch("https://formsubmit.co/ajax/nadia.vero8787@gmail.com", {
+           method: "POST",
+           body: new FormData(e.target)
+         })
+         .then(res=>res.ok ?  res.json():Promise.reject(res))
+         .then(json=>{
+           console.log(json);
+           $loader.classList.add("none");
+           $response.classList.remove("none");
+           $form.reset();
+   
+         })
+         .catch(err=>{
+           console.log(err);
+          /* $response.innerHTML = 'Error ${err.status}:${message}';*/
+         })
+           
+          .finally(()=>setTimeout(()=>{
+             $response.classList.add("none");
+             $loader.classList.add("none")
+             $response.innerHTML = "";
+           }, 10000)); 
+   
+   
+       });
+     }
+     d.addEventListener("DOMContentLoaded", contactForm)
+   </script>
+
+
+
+
 
   <script>
   jQuery(function($) {
